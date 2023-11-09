@@ -6,7 +6,6 @@ COPY ["compass-backend.csproj", "compass-backend/"]
 RUN dotnet restore "compass-backend/compass-backend.csproj"
 WORKDIR "/src/compass-backend"
 COPY . .
-RUN dotnet build "compass-backend.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "compass-backend.csproj" -c Release -o /app/publish
 FROM base AS final
