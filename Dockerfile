@@ -5,8 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["compass-backend/compass-backend.csproj", "compass-backend/"]
-RUN dotnet restore "compass-backend/compass-backend.csproj"
+COPY ["compass-backend.csproj", "compass-backend/"]
+RUN dotnet restore "compass-backend.csproj"
 COPY . .
 WORKDIR "/src/compass-backend"
 RUN dotnet build "compass-backend.csproj" -c Release -o /app/build
