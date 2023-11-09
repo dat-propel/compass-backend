@@ -32,5 +32,6 @@ app.UseAuthorization();
 
 
 app.MapControllers();
+app.MapGet("/hello", () => builder.Configuration["My:Env"]);
 
 app.Run();
