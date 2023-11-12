@@ -33,6 +33,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapGet("/hello", () => builder.Configuration["My:Env"]);
-app.MapGet("/", () => "Hello compass");
+app.MapGet("/", () => "Hello compasss");
 
 app.Run();
