@@ -1,5 +1,12 @@
 steps:
+  # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/steel-apparatus-404601/compass-backend', '.']
+
+  # Push the image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/steel-apparatus-404601/compass-backend']
+
+  # Deploy to App Engine
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', '--image-url', 'gcr.io/steel-apparatus-404601/compass-backend']
